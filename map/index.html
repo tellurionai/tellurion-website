@@ -132,7 +132,7 @@ var nodes=[
  {id:'interp',name:'Interpretability',via:'Anatomist',text:'Whether “I might be wrong” is written somewhere in a model’s internals is an interpretability question. Answering it is the Anatomist’s job.'},
  {id:'honesty',name:'Honesty',via:'Referee and Anatomist',text:'A model can know one thing and say or do another. Comparing what it represents inside with what it does outside shows whether it’s being straight, and is a first step toward catching deception.'},
  {id:'alignment',name:'Alignment',via:'Anatomist',text:'If a model knows it’s wrong but acts anyway, can steering or training connect knowing to doing? Closing that gap is one small, concrete piece of alignment.'},
- {id:'control',name:'Control',via:'Referee',text:'When a model can’t catch its own errors, something outside it has to. That is the Referee’s job, and a core idea in AI control.'}
+ {id:'control',name:'Monitoring',via:'Referee',text:'When a model can’t catch its own errors, something outside it has to. That is the Referee’s job. AI control uses monitors too, but assumes the model may be trying to evade them; we start with honest mistakes.'}
 ];
 var svg=document.getElementById('orbit'),cx=400,cy=262,rx=318,ry=196,rot=-12*Math.PI/180;
 function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
@@ -171,7 +171,7 @@ var qs=[
  {k:'Q2',name:'Interpretability',sub:'Do its internals encode “I might be wrong”?'},
  {k:'Q3',name:'Honesty',sub:'Does what it knows reach what it says and does?'},
  {k:'Q4',name:'Alignment',sub:'Can steering or training close the gap?'},
- {k:'Q5',name:'Control',sub:'When it doesn’t know, can an outside check catch it?'}
+ {k:'Q5',name:'Monitoring',sub:'When it doesn’t know, can an outside check catch it?'}
 ];
 var R='../research/',D='https://tellurionai.github.io/tellurion-referee/',C='https://github.com/tellurionai/tellurion-referee';
 var cells={
@@ -183,8 +183,8 @@ var cells={
  'Q2-3':{st:'active',title:'Widely studied',text:'Language models represent true and false statements along readable directions in their internals. We build on this work rather than lead it.',links:[['The Geometry of Truth','https://arxiv.org/abs/2310.06824']]},
  'Q3-3':{st:'active',title:'Widely studied',text:'Language models\u2019 internals carry signs of their own errors that their answers don\u2019t show. We build on this work rather than lead it.',links:[['LLMs Know More Than They Show','https://arxiv.org/abs/2410.02707']]},
  'Q4-3':{st:'active',title:'Widely studied',text:'Steering a language model along concept directions in its activations changes its behaviour. We build on this work rather than lead it.',links:[['Representation Engineering','https://arxiv.org/abs/2310.01405']]},
- 'Q5-3':{st:'active',title:'Widely studied',text:'Outside checks on language models, including trusted monitors that review a model\u2019s outputs, are an active area known as AI control. We build on this work rather than lead it.',links:[['AI Control','https://arxiv.org/abs/2312.06942']]},
- 'Q5-2':{st:'active',title:'Growing fast',text:'Monitoring an agent\u2019s actions so that a trusted check catches unsafe ones is a fast-growing area of AI control. We build on this work rather than lead it.',links:[['AI Control','https://arxiv.org/abs/2312.06942']]}
+ 'Q5-3':{st:'active',title:'Widely studied',text:'Outside monitors that review a language model\u2019s outputs are well studied, including in AI control, which assumes the model may be trying to slip past them. We build on this work rather than lead it.',links:[['AI Control','https://arxiv.org/abs/2312.06942']]},
+ 'Q5-2':{st:'active',title:'Growing fast',text:'Monitoring an agent\u2019s actions so that a trusted check catches unsafe ones is a fast-growing area, and central to AI control. We build on this work rather than lead it.',links:[['AI Control','https://arxiv.org/abs/2312.06942']]}
 };
 var LABEL={done:'Done',partial:'Partial',planned:'Planned',open:'Open',active:'Active field'};
 var g=document.getElementById('ggrid'),cp=document.getElementById('cellPanel'),btns={};
