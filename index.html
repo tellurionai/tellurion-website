@@ -3,14 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Tellurion — Know when your physical AI is wrong, and why</title>
-<meta name="description" content="AI assurance for physical AI. When an AI system’s predictions disagree with reality, Tellurion tells you why: the model, the sensor, or something new.">
+<title>Tellurion — Making AI systems legible, before they act</title>
+<meta name="description" content="Tellurion is an independent AI safety research lab. We study whether AI systems know when they are wrong, by reverse-engineering their internals and checking their predictions against reality.">
 <link rel="canonical" href="https://tellurionai.com/">
 <meta name="theme-color" content="#0E1B2C">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Tellurion">
-<meta property="og:title" content="Tellurion — Know when your physical AI is wrong, and why">
-<meta property="og:description" content="AI assurance for physical AI: when predictions and reality disagree, we tell you why.">
+<meta property="og:title" content="Tellurion — Making AI systems legible, before they act">
+<meta property="og:description" content="An independent AI safety research lab: does the model know when it is wrong?">
 <meta property="og:url" content="https://tellurionai.com/">
 <meta property="og:image" content="https://tellurionai.com/assets/img/og.png">
 <meta name="twitter:card" content="summary_large_image">
@@ -41,13 +41,13 @@
   <section class="hero">
     <div class="wrap">
       <div class="hero-copy">
-        <p class="eyebrow">AI assurance for physical AI</p>
-        <h1>Know when your physical AI is wrong, and why.</h1>
-        <p class="lede" style="margin-top:28px">Robots, machines and lab instruments increasingly run on AI models that predict how the physical world behaves. When those predictions and the real measurements disagree, we tell you why: the model, the sensor, or something new.</p>
-        <p class="muted" style="max-width:56ch;margin-top:16px">We start with world models and simulators. The referee works on any AI that predicts what its sensors should read.</p>
+        <p class="eyebrow">Independent AI safety research lab</p>
+        <h1>Making AI systems legible, before they act.</h1>
+        <p class="lede" style="margin-top:28px">Language models, agents, world models and robot policies increasingly act on their own picture of the world. We study whether they know when that picture is wrong: from the inside, by reverse-engineering what they represent, and from the outside, by checking what they predict against reality.</p>
+        <p class="muted" style="max-width:56ch;margin-top:16px">Nullius in verba: take nobody's word for it, including the model's.</p>
         <div class="actions">
           <a class="btn btn-primary" href="research/">Read our first result</a>
-          <a class="btn btn-ghost" href="https://github.com/tellurionai/tellurion-referee">View the code</a>
+          <a class="btn btn-ghost" href="https://github.com/tellurionai">View the code</a>
         </div>
       </div>
       <div class="hero-mark"><svg viewBox="95 300 1010 620" role="img" aria-label="The Tellurion mark: the Earth and Moon orbiting the Sun"><g fill="none" stroke="currentColor"><path d="M1086.3 650.8A487.3 201.25 0 1 1 886.6 474.0" stroke-width="18.56" transform="rotate(-18.04 600.2 636.8)"/><path d="M987.9 352.4A125.2 55.8 0 0 1 1036.2 361.1" stroke-width="10.63" transform="rotate(-18.04 966.2 407.4)"/><path d="M1080.6 384.7A125.2 55.8 0 0 1 990.1 462.2" stroke-width="10.63" transform="rotate(-18.04 966.2 407.4)"/><path d="M944.5 462.4A125.2 55.8 0 0 1 942.3 352.6" stroke-width="10.63" transform="rotate(-18.04 966.2 407.4)"/></g><g fill="currentColor"><circle cx="599.6" cy="637.6" r="108.5"/><circle cx="966.2" cy="407.6" r="37"/><circle cx="1047.6" cy="346.2" r="12.5"/></g></svg></div>
@@ -56,13 +56,13 @@
 
   <section class="section">
     <div class="wrap">
-      <p class="eyebrow">The problem</p>
-      <h2 style="max-width:22ch">When a model disagrees with the measurements, there are three explanations.</h2>
-      <p class="muted" style="max-width:64ch;margin-top:20px">In 2011 the OPERA experiment measured neutrinos travelling faster than light. The cause was a loose fibre-optic cable. Telling these cases apart is slow, expert work, and it gets harder as learned models replace hand-built ones.</p>
+      <p class="eyebrow">The question</p>
+      <h2 style="max-width:22ch">Does the model know when it's wrong?</h2>
+      <p class="muted" style="max-width:64ch;margin-top:20px">A model's confidence is a claim, not evidence. We test that claim on any kind of model, past, present or future, and publish what we find, including when the answer is no.</p>
       <div class="three">
-        <div><p class="n">01</p><h3>The model is wrong</h3><p>A setting changed or the model never learned this regime. Re-fit it, retrain it, or stop trusting it here.</p></div>
-        <div><p class="n">02</p><h3>The instrument is wrong</h3><p>A sensor froze, drifted or picked up noise. Fix the hardware before believing any result.</p></div>
-        <div><p class="n">03</p><h3>Something new</h3><p>A force or effect the model has never seen. This is the case science is looking for.</p></div>
+        <div><p class="n">01 · Referee · first result</p><h3>Outside in</h3><p>Checks a model's predictions against real measurements, and names the cause of a disagreement: the model, the sensor, or something new.</p></div>
+        <div><p class="n">02 · Gnomon · in progress</p><h3>Metacognition</h3><p>Can a model know when it doesn't know? Our first study asks whether world models represent the hazards they act into.</p></div>
+        <div><p class="n">03 · Reverse engineering · planned</p><h3>Inside out</h3><p>Reading model internals across architectures: language models, agents, world models, and robot policies.</p></div>
       </div>
     </div>
   </section>
@@ -70,10 +70,10 @@
   <section class="section result">
     <div class="wrap">
       <div class="result-copy">
-        <p class="eyebrow">First result · Tellurion Referee</p>
+        <p class="eyebrow">First result · Referee</p>
         <h2>A model's own confidence is not a safety check.</h2>
         <p class="muted" style="max-width:56ch;margin-top:20px">On a locked test of 1,000 simulated pendulum runs, measured once, at a similar false-alarm rate:</p>
-        <p class="muted" style="max-width:56ch;margin-top:20px">At noticing problems, the referee ties a simple prediction-gap alarm. Its added value is naming the cause, and that is what we are improving.</p>
+        <p class="muted" style="max-width:56ch;margin-top:20px">At noticing problems, the referee ties a simple prediction-gap alarm. Its added value is naming the cause, and that is still weak for sensor faults and new forces.</p>
         <p style="margin-top:20px"><a href="research/">How we measured it →</a> · <a href="https://tellurionai.github.io/tellurion-referee/">Try the live demo →</a></p>
       </div>
       <div class="stats">
@@ -90,8 +90,8 @@
         <a href="timeline/">Full timeline →</a>
       </div>
       <div class="latest two">
-        <a class="card" href="research/"><span><span class="kind" data-k="hackathon">Latest · Hackathon</span></span><time datetime="2026-10-22">Oct 21–22, 2026</time><h3>Tellurion Referee at the OSI Hackathon</h3><p>A referee that names why an AI model and the measurements disagree. Tested once on 1,000 locked runs.</p></a>
-        <a class="card" href="timeline/"><span><span class="kind" data-k="research">Next · Research</span></span><time>Planned</time><h3>Does the referee work on a real pendulum?</h3><p>So far everything is simulated. Next: real sensors, faults we cause ourselves so we know the right answer, and a referee that waits a moment before naming the cause.</p></a>
+        <a class="card" href="research/"><span><span class="kind" data-k="hackathon">Latest · Hackathon</span></span><time datetime="2026-10-22">Oct 21–22, 2026</time><h3>Referee at the OSI Hackathon</h3><p>A referee that names why an AI model and the measurements disagree. Tested once on 1,000 locked runs.</p></a>
+        <a class="card" href="timeline/"><span><span class="kind" data-k="research">Next · Research</span></span><time>Planned</time><h3>Do world models know the hazards they act into?</h3><p>Comparing a world model that reconstructs what it sees (DreamerV3) with one that doesn't (TD-MPC2), in simulated environments with built-in hazards.</p></a>
       </div>
     </div>
   </section>
@@ -100,9 +100,9 @@
     <div class="wrap">
       <p class="eyebrow">How we work</p>
       <div class="principles">
-        <div><h3>Open by default</h3><p>Benchmarks, test protocols and reference code are public, so anyone can rerun our numbers.</p></div>
+        <div><h3>Open by default</h3><p>Code, test protocols and benchmarks are public, so anyone can rerun our numbers.</p></div>
         <div><h3>Locked tests</h3><p>Results come from a held-out test, run once and logged. We publish our weak numbers too.</p></div>
-        <div><h3>Physics first</h3><p>Known laws and instrument physics turn "something is off" into "this is what is off".</p></div>
+        <div><h3>Inside and out</h3><p>Where we can, every claim is checked twice: in the model's internals, and against reality.</p></div>
       </div>
     </div>
   </section>
@@ -111,8 +111,8 @@
 <footer class="site-footer" id="contact">
   <div class="wrap top">
     <div>
-      <h2>Running AI on robots, machines or instruments?</h2>
-      <p class="muted" style="margin:12px 0 0">We'd like to hear where they fail you. <a href="mailto:hello@tellurionai.com">hello@tellurionai.com</a></p>
+      <h2>Working on making AI systems trustworthy?</h2>
+      <p class="muted" style="margin:12px 0 0">We'd like to hear from researchers and builders. <a href="mailto:hello@tellurionai.com">hello@tellurionai.com</a></p>
     </div>
     <div class="links">
       <a href="https://github.com/tellurionai">GitHub</a>
