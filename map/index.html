@@ -125,12 +125,12 @@
 (function(){
 var NS='http://www.w3.org/2000/svg';
 var nodes=[
- {id:'honesty',name:'Honesty',text:'A model that can\u2019t tell it\u2019s wrong states falsehoods with full confidence. Knowing your own errors comes before reporting them honestly.'},
- {id:'deception',name:'Deception',text:'To spot a model hiding something, you first need to read what it knows about itself. The same inside-out tools apply.'},
- {id:'control',name:'Control',text:'When a model can\u2019t catch its own errors, something outside it has to. That is the Referee\u2019s job, and a core idea in AI control.'},
- {id:'interp',name:'Interpretability',text:'Whether \u201cI might be wrong\u201d is written somewhere in a model\u2019s internals is an interpretability question. Answering it is the Anatomist\u2019s job.'},
- {id:'evals',name:'Evaluations',text:'Does a model\u2019s confidence match how often it\u2019s right? That calibration check is an evaluation every deployed model needs.'},
- {id:'deploy',name:'Safe deployment',text:'A system that can\u2019t tell it\u2019s out of its depth is unsafe to deploy. In June 2026, Waymo recalled 3,871 robotaxis after some entered active freeway construction zones.',link:['Recall report (CBT News)','https://www.cbtnews.com/waymo-recalls-nearly-3900-robotaxis/']}
+ {id:'honesty',name:'Honesty',via:'Referee and Anatomist',text:'A model that can\u2019t tell it\u2019s wrong states falsehoods with full confidence. Comparing what it says (outside) with what it represents (inside) shows whether it\u2019s being straight.'},
+ {id:'deception',name:'Deception',via:'Anatomist',text:'To spot a model hiding something, you first need to read what it knows about itself. The same inside-out tools apply.'},
+ {id:'control',name:'Control',via:'Referee',text:'When a model can\u2019t catch its own errors, something outside it has to. That is the Referee\u2019s job, and a core idea in AI control.'},
+ {id:'interp',name:'Interpretability',via:'Anatomist',text:'Whether \u201cI might be wrong\u201d is written somewhere in a model\u2019s internals is an interpretability question. Answering it is the Anatomist\u2019s job.'},
+ {id:'evals',name:'Evaluations',via:'Referee',text:'Does a model\u2019s confidence match how often it\u2019s right? That calibration check is an evaluation every deployed model needs.'},
+ {id:'deploy',name:'Safe deployment',via:'Referee',text:'A system that can\u2019t tell it\u2019s out of its depth is unsafe to deploy. In June 2026, Waymo recalled 3,871 robotaxis after some entered active freeway construction zones.',link:['Recall report (CBT News)','https://www.cbtnews.com/waymo-recalls-nearly-3900-robotaxis/']}
 ];
 var svg=document.getElementById('orbit'),cx=400,cy=262,rx=318,ry=196,rot=-12*Math.PI/180;
 function el(n,a){var e=document.createElementNS(NS,n);for(var k in a)e.setAttribute(k,a[k]);return e;}
@@ -158,7 +158,7 @@ nodes.forEach(function(n){var b=document.createElement('button');b.className='ch
 var op=document.getElementById('orbitPanel');
 function pick(id){var n=nodes.filter(function(m){return m.id===id})[0];
  nodes.forEach(function(m){var on=m.id===id;links[m.id].setAttribute('class','link'+(on?' active':''));gs[m.id].setAttribute('class','node'+(on?' active':''));cb[m.id].setAttribute('aria-pressed',on?'true':'false');});
- op.innerHTML='';var k=document.createElement('p');k.className='k';k.textContent='Gnomon \u2192 '+n.name;var h=document.createElement('h3');h.textContent=n.name;var p=document.createElement('p');p.textContent=n.text;op.append(k,h,p);
+ op.innerHTML='';var k=document.createElement('p');k.className='k';k.textContent='Gnomon \u2192 '+n.name+' \u00b7 via the '+n.via;var h=document.createElement('h3');h.textContent=n.name;var p=document.createElement('p');p.textContent=n.text;op.append(k,h,p);
  if(n.link){var d=document.createElement('p');d.className='links';var a=document.createElement('a');a.href=n.link[1];a.textContent=n.link[0];d.appendChild(a);op.appendChild(d);}
 }
 pick('honesty');
