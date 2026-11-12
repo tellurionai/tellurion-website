@@ -270,7 +270,7 @@ function HomePage() {
                   <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-brass opacity-50" />
                   <span className="relative inline-flex h-2 w-2 rounded-full bg-brass" />
                 </span>
-                Independent AI safety research lab
+                Independent, open-source AI safety research lab
               </motion.p>
               <motion.h1
                 className="display max-w-[12ch] text-[clamp(3.8rem,7vw,6.7rem)] leading-[0.98] text-ivory"
@@ -291,7 +291,8 @@ function HomePage() {
                 Language models, agents, world models and robot policies increasingly act on their
                 own picture of the world. We study whether they know when that picture is wrong:
                 from the inside, by reverse-engineering what they represent, and from the outside,
-                by checking what they predict against reality.
+                by checking what they predict against reality. We build those checks in the open, so
+                anyone running AI can verify it themselves instead of taking a lab&apos;s word for it.
               </motion.p>
               <motion.div
                 className="mt-9 flex flex-wrap items-center gap-3"
@@ -638,9 +639,9 @@ function HomePage() {
             </Reveal>
             <div className="grid gap-8 sm:grid-cols-3">
               {[
-                ["01", "Open by default", "Benchmarks, test protocols and reference code are public."],
+                ["01", "Open by default", "Code, benchmarks and test protocols are public, so you can check AI yourself instead of taking a lab's word for it."],
                 ["02", "Locked tests", "Held-out results are run once and logged. We publish weak numbers too."],
-                ["03", "Physics first", "Known laws and instrument physics help explain what is off."],
+                ["03", "Inside and out", "Where we can, every claim is checked twice: in the model's internals, and against reality."],
               ].map(([n, title, description], index) => (
                 <Reveal key={n} delay={index * 0.08}>
                   <div className="border-t border-white/15 pt-5">
@@ -888,7 +889,7 @@ export default function App() {
         ? {
             title: "Tellurion — Know when AI is wrong, and why",
             description:
-              "An independent AI safety research lab studying whether AI systems know when they are wrong, from their internals and by checking predictions against reality.",
+              "An independent, open-source AI safety research lab building tools that let anyone check whether an AI system knows when it is wrong.",
             canonical: "https://tellurionai.com/",
           }
         : {
